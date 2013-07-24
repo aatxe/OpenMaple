@@ -1,6 +1,6 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+*
+!.gitignore
+!*.md
+!UNLICENSE
+!*.java
+!*.xml
