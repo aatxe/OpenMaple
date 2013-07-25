@@ -11,7 +11,7 @@ done, contributions may be accepted. However, before that, it simply won't be
 possible. We hate the formality of it all, but it is unfortunately required by 
 copyright laws to protect against ownership claims. Ultimately, in taking the 
 short time required to do this, you're helping to ensure the true freedom of 
-this software by officially deicating your work to the public domain.
+this software by officially dedicating your work to the public domain.
 
 Secondly, we reserve the right to reject merging your changes upstream if 
 they're deemed to not fall in line with what we're looking for. We'll try to be 
@@ -30,7 +30,7 @@ match our style sufficiently, we'll comment on your pull request explaining
 what needs to be changed. If the changes are minor or the patch is critical, 
 we'll often merge it and simply refactor it ourselves. There are no strict 
 style guidelines here. Please just use good judgement when it comes to 
-determing what fits with existing code.
+determining what fits with existing code.
 
 [pdl]: <http://unlicense.org/>                                      "Unlicense"
 [cla]: <http://www.clahub.com/agreements/aaronweiss74/OpenMaple>    "CLA"
