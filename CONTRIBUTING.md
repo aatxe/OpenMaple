@@ -1,4 +1,5 @@
 # Contributing to OpenMaple #
+
 We're an open community here. After all, the whole project is 
 [public domain][pdl]. As such, our goal is to make it as easy as possible to 
 contribute to this emulator. As a result, we aim to be fairly lenient on 
