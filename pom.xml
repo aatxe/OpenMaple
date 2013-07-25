@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>OpenMaple</groupId>
+    <artifactId>OpenMaple</artifactId>
+    <version>0.0.0-SNAPSHOT</version>
+
+    <name>OpenMaple</name>
+    <url>https://aaronweiss74.github.io/OpenMaple</url>
+    <description>
+        OpenMaple is a fast MapleStory emulator aiming to bring openness back to
+        a community near wrecked by solely proprietary innovations.
+    </description>
+
+    <scm>
+        <url>https://github.com/aaronweiss74/OpenMaple</url>
+        <connection>scm:git:git://github.com/aaronweiss74/OpenMaple.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/aaronweiss74/OpenMaple.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+</project>
