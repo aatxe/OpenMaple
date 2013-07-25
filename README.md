@@ -19,10 +19,12 @@ easy to use, and it handles all our dependencies elegantly. As for those
 dependencies, we're using [Netty][netty] and [Hibernate][hib] to ensure that 
 the emulator is fast, efficient, and load-bearing. Additionally, we use 
 Google's [Guava][guava] library to provide a set of common libraries to use 
-throughout the emulator where needed. We want our emulator to be able to get 
-the most that it can out of the hardware, and we're sure that users want that 
-too. We also use [SLF4J][slf4j] to support our logging to provide a flexible, 
-easy-to-use logging system. OpenEmu aims to give choice back to the end-user.
+throughout the emulator where needed. To manage and access game data, this 
+emulator uses the [NX Format][nx] through [pkgnx][pkgnx] to provide a simple 
+and fast data solution. We want our emulator to be able to get the most that it 
+can out of the hardware, and we're sure that users want that too. We also use 
+[SLF4J][slf4j] to support our logging to provide a flexible, easy-to-use 
+logging system. OpenEmu aims to give choice back to the end-user.
 
 ### The Design ###
 
@@ -54,6 +56,8 @@ support and look forward to your contributions!
 [netty]:    <http://netty.io/>                              "Netty"
 [hib]:      <http://www.hibernate.org/>                     "Hibernate"
 [guava]:    <https://code.google.com/p/guava-libraries/>    "Google Guava"
+[nx]:       <http://nxformat.github.io/>                    "NX Format"
+[pkgnx]:    <http://aaronweiss74.github.io/pkgnx/>          "pkgnx"
 [slf4j]:    <http://slf4j.org/>                             "SLF4J"
 [contrib]:  <http://cl.ly/QRXw>                             "CONTRIBUTING.md"
 [fyrechat]: <http://www.fyrechat.net/>                      "Fyrechat IRC"
