@@ -35,7 +35,8 @@ serializers and deserializers. This makes it easier for the emulator to be
 ported to different versions of [MapleStory][ms] with minimal effort while 
 maintaining the same basic framework. We use [Hibernate][hib] with plain-old 
 Java objects to make working with a database simpler and more flexible. 
-Currently, OpenMaple is being built for the official v.40 beta version. Once that's more feature complete, we'll move on to emulating newer versions.
+Currently, OpenMaple is being built for the official v.40 beta version. Once
+that's more feature complete, we'll move on to emulating newer versions.
 
 ### Contributing ###
 
