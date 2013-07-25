@@ -1,6 +1,5 @@
-*
+*.*
 !.gitignore
 !*.md
-!UNLICENSE
 !*.java
 !*.xml
