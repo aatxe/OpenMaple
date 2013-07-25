@@ -6,6 +6,7 @@
 
     <groupId>OpenMaple</groupId>
     <artifactId>OpenMaple</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.0-SNAPSHOT</version>
 
     <name>OpenMaple</name>
@@ -21,6 +22,10 @@
         <developerConnection>scm:git:ssh://git@github.com/aaronweiss74/OpenMaple.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
+
+    <modules>
+        <module>pkgnx</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
