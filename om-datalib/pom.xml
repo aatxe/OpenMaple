@@ -2,14 +2,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <parent>
         <artifactId>OpenMaple</artifactId>
         <groupId>OpenMaple</groupId>
         <version>0.0.0-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
+    <modelVersion>4.0.0</modelVersion>
     <artifactId>om-datalib</artifactId>
 
+    <name>om-datalib</name>
+    <url>https://aaronweiss74.github.io/OpenMaple</url>
+    <description>
+        A simple library to abstract data handling logic from the OpenMaple server core.
+        It can be used to easily modify the data backend as needed.
+    </description>
 
+    <dependencies>
+        <dependency>
+            <groupId>pkgnx</groupId>
+            <artifactId>pkgnx</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+    </dependencies>
 </project>
