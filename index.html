@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>OpenMaple by aaronweiss74</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>OpenMaple</h1>
+        <p>A fast MapleStory emulator aiming to bring openness back to the private server community.</p>
+
+        <p class="view"><a href="https://github.com/aaronweiss74/OpenMaple">View the Project on GitHub <small>aaronweiss74/OpenMaple</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/aaronweiss74/OpenMaple/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/aaronweiss74/OpenMaple/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/aaronweiss74/OpenMaple">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="openmaple" class="anchor" href="#openmaple"><span class="octicon octicon-link"></span></a>OpenMaple</h1>
+
+<p>OpenMaple is a fast <a href="http://www.nexon.net/landing/maplestory/" title="MapleStory">MapleStory</a> emulator aiming to bring openness back to 
+a community near wrecked by solely proprietary innovations. We're not going to 
+do it with <a href="https://www.gnu.org/licenses/agpl-3.0.html" title="Affero GPL">overbearing licenses</a> like previous emulators. We're building 
+a new emulator from scratch leveraging modern technologies to bring 
+<a href="http://www.nexon.net/landing/maplestory/" title="MapleStory">MapleStory</a> emulation into the modern age. We're employing modern design 
+decisions to increase maintainability, scalability, and customizability. Best 
+of all, we're letting OpenMaple go free in every sense of the word. It's free 
+from cost, free from restriction, and free from worry. OpenMaple just is.</p>
+
+<h3>
+<a name="the-technologies" class="anchor" href="#the-technologies"><span class="octicon octicon-link"></span></a>The Technologies</h3>
+
+<p>OpenMaple, like many existing <a href="http://www.nexon.net/landing/maplestory/" title="MapleStory">MapleStory</a> emulators, is in Java, but now 
+all of the code is being written using idioms introduced with <a href="http://cl.ly/QRsf" title="Java 7">Java 7</a> 
+and will be updated where appropriate to utilize newer features as they arise. 
+OpenMaple is built using <a href="https://maven.apache.org/" title="Apache Maven">Apache's Maven</a> build system. It's fast, sleek, 
+easy to use, and it handles all our dependencies elegantly. As for those 
+dependencies, we're using <a href="http://netty.io/" title="Netty">Netty</a> and <a href="http://www.hibernate.org/" title="Hibernate">Hibernate</a> to ensure that 
+the emulator is fast, efficient, and load-bearing. Additionally, we use 
+Google's <a href="https://code.google.com/p/guava-libraries/" title="Google Guava">Guava</a> library to provide a set of common libraries to use 
+throughout the emulator where needed. To manage and access game data, this 
+emulator uses the <a href="http://nxformat.github.io/" title="NX Format">NX Format</a> through <a href="http://aaronweiss74.github.io/pkgnx/" title="pkgnx">pkgnx</a> to provide a simple 
+and fast data solution. We want our emulator to be able to get the most that it 
+can out of the hardware, and we're sure that users want that too. We also use 
+<a href="http://slf4j.org/" title="SLF4J">SLF4J</a> to support our logging to provide a flexible, easy-to-use 
+logging system. OpenEmu aims to give choice back to the end-user.</p>
+
+<h3>
+<a name="the-design" class="anchor" href="#the-design"><span class="octicon octicon-link"></span></a>The Design</h3>
+
+<p>Unlike existing emulators, OpenMaple follows modern design idioms that have 
+been tried and tested in production Java software. The entire system is based 
+around an event model using <a href="https://code.google.com/p/guava-libraries/" title="Google Guava">Guava's</a> EventBus and custom packet 
+serializers and deserializers. This makes it easier for the emulator to be 
+ported to different versions of <a href="http://www.nexon.net/landing/maplestory/" title="MapleStory">MapleStory</a> with minimal effort while 
+maintaining the same basic framework. We use <a href="http://www.hibernate.org/" title="Hibernate">Hibernate</a> with plain-old 
+Java objects to make working with a database simpler and more flexible. 
+Currently, OpenMaple is being built for the official v.40 version. Once that's 
+more feature complete, we'll move on to emulating newer versions.</p>
+
+<h3>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h3>
+
+<p>If you're as excited about this as we are, we totally understand that you want 
+to get involved and we want you to get involved. Make sure to keep reading for
+the guidelines or check CONTRIBUTING.md locally. You'll need to follow the 
+instructions therein to get your code upstream. Once you're ready to go, just 
+fork and start hacking away. If you need help on figuring out what needs to be
+done or even how to do it, you'll be able to find aaronweiss74 and Fraysa on 
+<code>#vana</code> on the <a href="http://www.fyrechat.net/" title="Fyrechat IRC">FyreChat IRC Network</a>. We appreciate your support and 
+look forward to your contributions!</p>
+
+<p>We're an open community here. After all, the whole project is 
+<a href="http://unlicense.org/" title="Unlicense">public domain</a>. As such, our goal is to make it as easy as possible to 
+contribute to this emulator. As a result, we aim to be fairly lenient on 
+contributing. However, there are still some requirements. </p>
+
+<p>First and foremost, all contributors must declare their work on this project to 
+be public domain using our <a href="http://www.clahub.com/agreements/aaronweiss74/OpenMaple" title="CLA">Contributor Licensing Agreement</a>. Once that's 
+done, contributions may be accepted. However, before that, it simply won't be 
+possible. We hate the formality of it all, but it is unfortunately required by 
+copyright laws to protect against ownership claims. Ultimately, in taking the 
+short time required to do this, you're helping to ensure the true freedom of 
+this software by officially dedicating your work to the public domain.</p>
+
+<p>Secondly, we reserve the right to reject merging your changes upstream if 
+they're deemed to not fall in line with what we're looking for. We'll try to be 
+reasonable with contributions, but sometimes things just don't work out. It's 
+unfortunate, but sometimes contributions might just not belong. Thankfully, 
+even if we don't like your changes, you can continue to work on it to your 
+heart's content. You can continue to maintain your fork against the official 
+OpenMaple branch or you can shoot off by yourself. It's public domain, so you 
+have complete freedom.</p>
+
+<p>Thirdly and finally, we don't accept merges that assert style changes onto the 
+project. We simply don't need a back-and-forth of style changes between 
+contributors. So, please don't include anything of that sort, and try to write 
+your contributions in a style similar to that of existing code. If you fail to 
+match our style sufficiently, we'll comment on your pull request explaining 
+what needs to be changed. If the changes are minor or the patch is critical, 
+we'll often merge it and simply refactor it ourselves. There are no strict 
+style guidelines here. Please just use good judgement when it comes to 
+determining what fits with existing code.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/aaronweiss74">aaronweiss74</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-41231572-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
