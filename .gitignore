@@ -2,4 +2,4 @@
 !.gitignore
 !*.md
 !*.java
-!*.xml
+!pom.xml

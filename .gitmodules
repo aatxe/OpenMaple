@@ -1,0 +1,3 @@
+[submodule "pkgnx"]
+	path = pkgnx
+	url = https://github.com/aaronweiss74/pkgnx.git
