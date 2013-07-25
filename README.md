@@ -45,8 +45,8 @@ guidelines for contributing [online][contrib] or in CONTRIBUTING.md. You'll
 need to follow the instructions therein to get your code upstream. Once you're 
 ready to go, just fork and start hacking away. If you need help on figuring out 
 what needs to be done or even how to do it, you'll be able to find aaronweiss74 
-and Fraysa on #vana on the [FyreChat IRC Network][fyrechat]. We appreciate your 
-support and look forward to your contributions!
+and Fraysa on `#vana` on the [FyreChat IRC Network][fyrechat]. We appreciate 
+your support and look forward to your contributions!
 
 [ms]:       <http://www.nexon.net/landing/maplestory/>      "MapleStory"
 [agpl]:     <https://www.gnu.org/licenses/agpl-3.0.html>    "Affero GPL"
