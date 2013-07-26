@@ -10,12 +10,11 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>om-commons</artifactId>
+    <artifactId>om-crypto</artifactId>
 
-    <name>om-commons</name>
+    <name>om-crypto</name>
     <url>https://aaronweiss74.github.io/OpenMaple</url>
     <description>
-        A commons library for the OpenMaple project aiming to provide common data structures and utilities.
-        This library should not contain any networking or cryptography information.
+        A simple library to handle all protocol-specific cryptography for OpenMaple.
     </description>
 </project>

@@ -26,6 +26,8 @@
     <modules>
         <module>pkgnx</module>
         <module>om-data</module>
+        <module>om-commons</module>
+        <module>om-crypto</module>
     </modules>
 
     <dependencies>
