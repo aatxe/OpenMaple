@@ -10,9 +10,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>om-datalib</artifactId>
+    <artifactId>om-data</artifactId>
 
-    <name>om-datalib</name>
+    <name>om-data</name>
     <url>https://aaronweiss74.github.io/OpenMaple</url>
     <description>
         A simple library to abstract data handling logic from the OpenMaple server core.
