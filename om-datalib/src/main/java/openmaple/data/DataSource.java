@@ -22,9 +22,8 @@ public abstract class DataSource {
 	}
 
 	/**
-	 * Gets the name of the data source.
-	 * This can be anything as long as it describes the source uniquely.
-	 * For file formats, this will often be the file name.
+	 * Gets the name of the data source. This can be anything as long as it describes the source uniquely. For file
+	 * formats, this will often be the file name.
 	 *
 	 * @return the name of the source
 	 */
@@ -42,6 +41,7 @@ public abstract class DataSource {
 	 *
 	 * @param path the path to the entry
 	 * @return the entry
+	 *
 	 * @throws NoSuchDataEntryException if entry cannot be found
 	 */
 	public DataEntry lookUp(String path) {
@@ -66,8 +66,8 @@ public abstract class DataSource {
 	}
 
 	/**
-	 * Populates an internal {@code Map} with data entries for full-path lookup.
-	 * This should result in a significant speed-up in accessing data entries by full path.
+	 * Populates an internal {@code Map} with data entries for full-path lookup. This should result in a significant
+	 * speed-up in accessing data entries by full path.
 	 */
 	public void populateEntryMap() {
 		entriesLock.lock();

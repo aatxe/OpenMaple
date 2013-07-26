@@ -15,7 +15,7 @@ public class NoSuchDataEntryException extends RuntimeException {
 	 * Constructs an exception representing a missing data entry.
 	 *
 	 * @param source the {@code DataSource} with the missing entry
-	 * @param path the path to the entry
+	 * @param path   the path to the entry
 	 */
 	public NoSuchDataEntryException(DataSource source, String path) {
 		this("No such data entry (" + path + ") exists in " + source.getName(), source, path);
@@ -25,8 +25,8 @@ public class NoSuchDataEntryException extends RuntimeException {
 	 * Constructs an exception representing a missing data entry with a specific {@code message}.
 	 *
 	 * @param message the message
-	 * @param source the {@code DataSource} with the missing entry
-	 * @param path the path to the entry
+	 * @param source  the {@code DataSource} with the missing entry
+	 * @param path    the path to the entry
 	 */
 	public NoSuchDataEntryException(String message, DataSource source, String path) {
 		super(message);
