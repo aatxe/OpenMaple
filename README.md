@@ -24,7 +24,7 @@ emulator uses the [NX Format][nx] through [pkgnx][pkgnx] to provide a simple
 and fast data solution. We want our emulator to be able to get the most that it 
 can out of the hardware, and we're sure that users want that too. We also use 
 [SLF4J][slf4j] to support our logging to provide a flexible, easy-to-use 
-logging system. OpenEmu aims to give choice back to the end-user.
+logging system. OpenMaple aims to give choice back to the end-user.
 
 ### The Design ###
 
