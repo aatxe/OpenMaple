@@ -50,8 +50,13 @@ public class InitializationVector {
 
 	public InitializationVector(byte[] iv) {
 		if (iv.length != 4)
-			throw new RuntimeException("Attempted to create an invalid iv of length " + iv.length);
+			throw new LegacyCryptographyException("Attempted to create an invalid iv of length " + iv.length);
 		this.iv = iv;
+	}
+
+	public InitializationVector(byte[] iv, int randIndex) {
+		this(iv);
+		iv[randIndex] = (byte) (Math.random() * 255);
 	}
 
 	public byte[] get() {
