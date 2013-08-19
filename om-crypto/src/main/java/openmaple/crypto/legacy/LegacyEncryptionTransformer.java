@@ -12,7 +12,7 @@ import static openmaple.crypto.legacy.LegacyUtils.*;
  * @version 1.0.0
  * @since 8/19/13
  */
-public class LegacyEncryptionTransformer implements ByteTransformer {
+public class LegacyEncryptionTransformer extends LegacyBaseTransformer {
 	@Override
 	public void transform(byte[] data) {
 		byte cursor, prior;
@@ -38,18 +38,5 @@ public class LegacyEncryptionTransformer implements ByteTransformer {
 				data[j - 1] = cursor;
 			}
 		}
-	}
-
-	@Override
-	public void transform(ByteBuf data) {
-		data.markReaderIndex();
-		data.markWriterIndex();
-		data.clear();
-		byte[] trans = new byte[data.readableBytes()];
-		data.readBytes(trans);
-		transform(trans);
-		data.setBytes(0, trans);
-		data.resetReaderIndex();
-		data.resetWriterIndex();
 	}
 }
