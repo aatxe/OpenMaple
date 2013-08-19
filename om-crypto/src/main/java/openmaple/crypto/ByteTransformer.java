@@ -23,23 +23,4 @@ public interface ByteTransformer {
 	 * @param data the buffer to be transformed
 	 */
 	public void transform(ByteBuf data);
-
-	/**
-	 * Performs an in-place transformation on a segment of an array of bytes.
-	 *
-	 * @param data       the array to be transformed
-	 * @param startIndex the starting index of the segment to be transformed
-	 * @param endIndex   the ending index of the segment to be transformed
-	 */
-	public void transformSegment(byte[] data, int startIndex, int endIndex);
-
-
-	/**
-	 * Performs an in-place transformation on a segment of a {@code ByteBuf}.
-	 *
-	 * @param data       the buffer to be transformed
-	 * @param startIndex the starting index of the segment to be transformed
-	 * @param endIndex   the ending index of the segment to be transformed
-	 */
-	public void transformSegment(ByteBuf data, int startIndex, int endIndex);
 }
