@@ -33,6 +33,14 @@ public class AESTransformer extends LegacyBaseTransformer {
 	private final short version;
 	private final Cipher cipher;
 
+	/**
+	 * Creates an AES transformer using the default initialization vector with the final byte randomized.
+	 *
+	 * @param iv      the default initialization vector
+	 * @param version the target MapleStory version
+	 *
+	 * @throws LegacyCryptographyException if the AES cipher is missing or inoperable
+	 */
 	public AESTransformer(byte[] iv, short version) {
 		this.iv = new InitializationVector(iv, 3);
 		this.version = (short) (((version >> 8) & 0xFF) | ((version << 8) & 0xFF00));
@@ -46,6 +54,19 @@ public class AESTransformer extends LegacyBaseTransformer {
 		}
 	}
 
+	/**
+	 * Gets the current {@code InitializationVector} from this AES transformer.
+	 * @return the current initialization vector
+	 */
+	public InitializationVector getIv() {
+		return iv;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @throws LegacyCryptographyException if the AES cipher fails to work for any reason.
+	 */
 	@Override
 	public void transform(byte[] data) {
 		int blockSize = 0x5B0;

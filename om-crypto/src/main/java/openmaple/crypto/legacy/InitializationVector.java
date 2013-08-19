@@ -48,21 +48,43 @@ public class InitializationVector {
 
 	private byte[] iv;
 
+	/**
+	 * Creates an initialization vector of four bytes.
+	 *
+	 * @param iv the initialization vector
+	 * @throws LegacyCryptographyException if the vector is of an invalid length (any other than four bytes)
+	 */
 	public InitializationVector(byte[] iv) {
 		if (iv.length != 4)
 			throw new LegacyCryptographyException("Attempted to create an invalid iv of length " + iv.length);
 		this.iv = iv;
 	}
 
+
+	/**
+	 * Creates an initialization vector of four bytes with the value at a specific index randomized.
+	 *
+	 * @param iv        the initialization vector
+	 * @param randIndex the index to randomize the value of
+	 * @throws LegacyCryptographyException if the vector is of an invalid length (any other than four bytes)
+	 */
 	public InitializationVector(byte[] iv, int randIndex) {
 		this(iv);
 		iv[randIndex] = (byte) (Math.random() * 255);
 	}
 
+	/**
+	 * Gets the actual value of the initialization vector.
+	 *
+	 * @return the value as a byte array
+	 */
 	public byte[] get() {
 		return iv;
 	}
 
+	/**
+	 * Rolls the initialization vector to the next in the sequence.
+	 */
 	public void roll() {
 		byte[] iv = {(byte) 0xF2, 0x53, 0x50, (byte) 0xC6};
 		for (byte b : this.iv) {
