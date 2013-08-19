@@ -37,4 +37,12 @@ public interface CryptoKit {
 	 * @param data the buffer to be decrypted
 	 */
 	public void decrypt(ByteBuf data);
+
+	/**
+	 * Validates the data as a packet.
+	 *
+	 * @param data the data to validate
+	 * @return whether or not the data is a valid packet
+	 */
+	public boolean validatePacket(byte[] data);
 }
