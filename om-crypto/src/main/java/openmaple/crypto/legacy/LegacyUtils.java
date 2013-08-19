@@ -31,4 +31,19 @@ public class LegacyUtils {
 		int tmp = ((b & 0xFF) << 8) >>> (c % 8);
 		return (byte) ((tmp & 0xFF) | (tmp >> 8));
 	}
+
+	/**
+	 * Scales an array of bytes up by the desired {@code scale} factor.
+	 *
+	 * @param bs    the array of bytes to scale
+	 * @param scale the scale factor
+	 * @return the scaled byte array
+	 */
+	public static byte[] upscale(byte[] bs, int scale) {
+		byte[] ret = new byte[bs.length * scale];
+		for (int i = 0; i < ret.length; i++) {
+			ret[i] = bs[i % bs.length];
+		}
+		return ret;
+	}
 }
