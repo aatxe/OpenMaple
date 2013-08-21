@@ -56,7 +56,7 @@ public class InitializationVector {
 	 */
 	public InitializationVector(byte[] iv) {
 		if (iv.length != 4)
-			throw new LegacyCryptographyException("Attempted to create an invalid iv of length " + iv.length);
+			throw new IllegalArgumentException("Attempted to create an invalid iv of length " + iv.length);
 		this.iv = iv;
 	}
 
