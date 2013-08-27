@@ -52,7 +52,7 @@ public class InitializationVector {
 	 * Creates an initialization vector of four bytes.
 	 *
 	 * @param iv the initialization vector
-	 * @throws LegacyCryptographyException if the vector is of an invalid length (any other than four bytes)
+	 * @throws IllegalArgumentException if the vector is of an invalid length (any other than four bytes)
 	 */
 	public InitializationVector(byte[] iv) {
 		if (iv.length != 4)
