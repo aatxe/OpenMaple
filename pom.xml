@@ -28,13 +28,14 @@
         <module>om-data</module>
         <module>om-commons</module>
         <module>om-crypto</module>
+        <module>om-network</module>
     </modules>
 
     <dependencies>
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.0.5.Final</version>
+            <version>4.0.10.Final</version>
         </dependency>
 
         <dependency>
