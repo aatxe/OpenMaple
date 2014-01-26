@@ -7,7 +7,7 @@ package openmaple.utils;
  * @version 1.0.0
  * @since 1/26/14
  */
-public class DataTool {
+public class HexUtils {
 	/**
 	 * Converts an array of bytes into a human-readable 64-bit {@code String}.
 	 *
