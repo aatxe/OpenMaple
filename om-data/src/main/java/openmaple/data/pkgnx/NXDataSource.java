@@ -3,8 +3,10 @@ package openmaple.data.pkgnx;
 import openmaple.data.DataEntry;
 import openmaple.data.DataSource;
 import openmaple.data.InvalidDataSourceException;
+import us.aaronweiss.pkgnx.EagerNXFile;
+import us.aaronweiss.pkgnx.LazyNXFile;
 import us.aaronweiss.pkgnx.NXFile;
-import us.aaronweiss.pkgnx.format.NXNode;
+import us.aaronweiss.pkgnx.NXNode;
 
 import java.io.IOException;
 
@@ -26,23 +28,22 @@ public class NXDataSource extends DataSource {
 	 * @throws InvalidDataSourceException if the file fails to load
 	 */
 	public NXDataSource(String filePath) {
-		try {
-			source = new NXFile(filePath);
-		} catch (IOException e) {
-			throw new InvalidDataSourceException("Failed to load file: " + filePath, e);
-		}
+		this(filePath, false);
 	}
 
 	/**
 	 * Creates an {@code NXFile} data source.
 	 *
-	 * @param filePath         the path to the file
-	 * @param parseImmediately whether or not to parse it immediately
+	 * @param filePath  the path to the file
+	 * @param eagerLoad whether or not to parse it immediately
 	 * @throws InvalidDataSourceException if the file fails to load
 	 */
-	public NXDataSource(String filePath, boolean parseImmediately) {
+	public NXDataSource(String filePath, boolean eagerLoad) {
 		try {
-			source = new NXFile(filePath, parseImmediately);
+			if (eagerLoad)
+				source = new EagerNXFile(filePath, eagerLoad);
+			else
+				source = new LazyNXFile(filePath);
 		} catch (IOException e) {
 			throw new InvalidDataSourceException("Failed to load file: " + filePath, e);
 		}

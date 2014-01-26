@@ -1,9 +1,13 @@
 package openmaple.data.pkgnx;
 
+import io.netty.buffer.ByteBuf;
 import openmaple.data.DataEntry;
 import openmaple.data.DataEntryType;
-import us.aaronweiss.pkgnx.format.NXNode;
-import us.aaronweiss.pkgnx.format.nodes.*;
+import us.aaronweiss.pkgnx.NXNode;
+import us.aaronweiss.pkgnx.nodes.*;
+
+import java.awt.Point;
+import java.awt.image.BufferedImage;
 
 /**
  * An entry of data representing an {@code NXNode} within an {@code NXFile}.
@@ -55,6 +59,54 @@ public class NXDataEntry implements DataEntry {
 	@Override
 	public Object getData() {
 		return node.get();
+	}
+
+	@Override
+	public long getDataAsLong() {
+		if (node instanceof NXLongNode)
+			return (long) node.get();
+		else
+			throw new UnsupportedOperationException("Cannot cast non-long node data as long.");
+	}
+
+	@Override
+	public double getDataAsDouble() {
+		if (node instanceof NXDoubleNode)
+			return (double) node.get();
+		else
+			throw new UnsupportedOperationException("Cannot cast non-double node data as double.");
+	}
+
+	@Override
+	public String getDataAsString() {
+		if (node instanceof NXStringNode)
+			return (String) node.get();
+		else
+			throw new UnsupportedOperationException("Cannot cast non-String node data as String.");
+	}
+
+	@Override
+	public Point getDataAsPoint() {
+		if (node instanceof NXPointNode)
+			return (Point) node.get();
+		else
+			throw new UnsupportedOperationException("Cannot cast non-Point node data as Point.");
+	}
+
+	@Override
+	public BufferedImage getDataAsBufferedImage() {
+		if (node instanceof NXBitmapNode)
+			return (BufferedImage) node.get();
+		else
+			throw new UnsupportedOperationException("Cannot cast non-BufferedImage node data as BufferedImage.");
+	}
+
+	@Override
+	public ByteBuf getDataAsByteBuf() {
+		if (node instanceof NXAudioNode)
+			return (ByteBuf) node.get();
+		else
+			throw new UnsupportedOperationException("Cannot cast non-ByteBuf node data as ByteBuf.");
 	}
 
 	@Override
