@@ -1,7 +1,7 @@
 package openmaple.utils;
 
 /**
- * A set of tools for working with and transforming data.
+ * A set of tools for working with and transforming hexadecimal strings and conversions.
  *
  * @author Aaron Weiss
  * @version 1.0.0
