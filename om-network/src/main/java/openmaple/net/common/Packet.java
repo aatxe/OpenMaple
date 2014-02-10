@@ -1,9 +1,11 @@
 package openmaple.net.common;
 
 /**
- * @author Aaron
- * @version 1.0
+ * The fundamental interface for all protocol packets.
+ *
+ * @author Aaron Weiss
+ * @version 1.0.0
  * @since 2/9/14
  */
-public class Packet {
+public interface Packet {
 }

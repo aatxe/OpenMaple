@@ -8,8 +8,8 @@ import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 
 /**
- * @author Aaron
- * @version 1.0
+ * @author Aaron Weiss
+ * @version 1.0.0
  * @since 2/10/14
  */
 public class BaseDeserializer {
@@ -20,7 +20,7 @@ public class BaseDeserializer {
 		}
 	};
 
-	public Object deserialize(ByteBuf data, Class<?> type) {
+	public static Object deserialize(ByteBuf data, Class<?> type) {
 		if (type.equals(int.class)) {
 			return data.readInt();
 		} else if (type.equals(short.class)) {
@@ -40,7 +40,7 @@ public class BaseDeserializer {
 				throw new Error("Failed to load UTF String in buffer.", e);
 			}
 		} else {
-			throw new Error("OpenMaple found an unknown base type in the de-serialization process.");
+			throw new Error("OpenMaple found an unknown base type (" + type.getSimpleName() + ") in the de-serialization process.");
 		}
 	}
 }
