@@ -5,6 +5,11 @@ import io.netty.buffer.Unpooled;
 import openmaple.net.common.annotate.Unsigned;
 
 import java.lang.annotation.Annotation;
+import java.nio.ByteOrder;
+import java.nio.CharBuffer;
+import java.nio.charset.CharacterCodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetEncoder;
 
 /**
  * @author Aaron
@@ -12,6 +17,13 @@ import java.lang.annotation.Annotation;
  * @since 2/10/14
  */
 public class BaseSerializer {
+	private static final ThreadLocal<CharsetEncoder> utfEncoder = new ThreadLocal<CharsetEncoder>() {
+		@Override
+		protected CharsetEncoder initialValue() {
+			return Charset.forName("UTF-8").newEncoder();
+		}
+	};
+
 	public static ByteBuf serialize(Object o, Class<?> type, Annotation[] annotations) {
 		boolean unsigned = false;
 		for (Annotation annotation : annotations)
@@ -31,7 +43,12 @@ public class BaseSerializer {
 			return Unpooled.buffer(4).writeFloat((float) o);
 		} else if (type.equals(String.class)) {
 			// TODO: serialize string;
-			return null;
+			String s = (String) o;
+			try {
+				return Unpooled.wrappedBuffer(utfEncoder.get().encode(CharBuffer.wrap(s.toCharArray()))).order(ByteOrder.LITTLE_ENDIAN);
+			} catch (CharacterCodingException e) {
+				throw new Error("Failed to encode string (" + s + ") into buffer.", e);
+			}
 		} else {
 			throw new Error("OpenMaple found an unknown base type (" + type.getSimpleName() + ") in the serialization process.");
 		}
