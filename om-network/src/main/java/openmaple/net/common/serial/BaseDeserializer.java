@@ -1,7 +1,9 @@
 package openmaple.net.common.serial;
 
 import io.netty.buffer.ByteBuf;
+import openmaple.net.common.utils.Unsigned;
 
+import java.lang.annotation.Annotation;
 import java.nio.ByteOrder;
 import java.nio.charset.CharacterCodingException;
 import java.nio.charset.Charset;
@@ -20,13 +22,17 @@ public class BaseDeserializer {
 		}
 	};
 
-	public static Object deserialize(ByteBuf data, Class<?> type) {
+	public static Object deserialize(ByteBuf data, Class<?> type, Annotation[] annotations) {
+		boolean unsigned = false;
+		for (Annotation annotation : annotations)
+			if (annotation.getClass().equals(Unsigned.class))
+				unsigned = true;
 		if (type.equals(int.class)) {
-			return data.readInt();
+			return (unsigned) ? data.readUnsignedShort() : data.readInt();
 		} else if (type.equals(short.class)) {
-			return data.readShort();
+			return (unsigned) ? data.readUnsignedByte() : data.readShort();
 		} else if (type.equals(long.class)) {
-			return data.readLong();
+			return (unsigned) ? data.readUnsignedInt() : data.readLong();
 		} else if (type.equals(byte.class)) {
 			return data.readByte();
 		} else if (type.equals(double.class)) {

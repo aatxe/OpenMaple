@@ -45,9 +45,10 @@ public class PacketDeserializer extends ReplayingDecoder<ByteBuf> {
 		int opcode = in.readUnsignedShort();
 		Constructor<?> constructor = constructors[opcode];
 		Class<?>[] types = constructor.getParameterTypes();
+		Annotation[][] annotations = constructor.getParameterAnnotations();
 		Object[] data = new Object[types.length];
 		for (int i = 0; i < data.length; i++) {
-			data[i] = BaseDeserializer.deserialize(in, types[i]);
+			data[i] = BaseDeserializer.deserialize(in, types[i], annotations[i]);
 		}
 		out.add(constructor.newInstance(data));
 	}
