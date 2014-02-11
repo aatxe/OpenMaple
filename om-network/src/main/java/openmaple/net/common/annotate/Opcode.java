@@ -1,4 +1,4 @@
-package openmaple.net.common;
+package openmaple.net.common.annotate;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

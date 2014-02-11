@@ -4,6 +4,7 @@ import com.google.common.reflect.ClassPath;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ReplayingDecoder;
+import openmaple.net.common.annotate.Opcode;
 import openmaple.net.common.serial.BaseDeserializer;
 
 import java.io.IOException;

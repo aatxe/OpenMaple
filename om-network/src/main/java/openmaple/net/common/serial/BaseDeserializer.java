@@ -1,7 +1,7 @@
 package openmaple.net.common.serial;
 
 import io.netty.buffer.ByteBuf;
-import openmaple.net.common.utils.Unsigned;
+import openmaple.net.common.annotate.Unsigned;
 
 import java.lang.annotation.Annotation;
 import java.nio.charset.Charset;
