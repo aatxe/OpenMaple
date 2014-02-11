@@ -4,8 +4,6 @@ import io.netty.buffer.ByteBuf;
 import openmaple.net.common.utils.Unsigned;
 
 import java.lang.annotation.Annotation;
-import java.nio.ByteOrder;
-import java.nio.charset.CharacterCodingException;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 
@@ -40,11 +38,8 @@ public class BaseDeserializer {
 		} else if (type.equals(float.class)) {
 			return data.readFloat();
 		} else if (type.equals(String.class)) {
-			try {
-				return utfDecoder.get().decode(data.readBytes(data.readUnsignedShort()).order(ByteOrder.LITTLE_ENDIAN).nioBuffer()).toString();
-			} catch (CharacterCodingException e) {
-				throw new Error("Failed to load UTF String in buffer.", e);
-			}
+			// TODO: de-serialize string
+			return null;
 		} else {
 			throw new Error("OpenMaple found an unknown base type (" + type.getSimpleName() + ") in the de-serialization process.");
 		}
