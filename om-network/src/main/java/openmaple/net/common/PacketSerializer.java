@@ -25,6 +25,16 @@ public class PacketSerializer extends MessageToByteEncoder {
 	private final static Logger logger = LoggerFactory.getLogger(PacketSerializer.class);
 	private Map<Class<?>, Constructor<?>> classConstructorMap = new HashMap<>();
 
+	@Override
+	protected void encode(ChannelHandlerContext ctx, Object msg, ByteBuf out) throws Exception {
+		int opcode = classToOpcodeValue(msg.getClass());
+		SerializeData[] data = fieldValues(msg);
+		out.writeShort((short) opcode);
+		for (SerializeData d : data) {
+			out.writeBytes(BaseSerializer.serialize(d.get(), d.type(), d.annotations()));
+		}
+	}
+
 	private Constructor<?> classToConstructor(Class<?> c) {
 		if (classConstructorMap.containsKey(c))
 			return classConstructorMap.get(c);
@@ -52,16 +62,6 @@ public class PacketSerializer extends MessageToByteEncoder {
 		return serializeData;
 	}
 
-	@Override
-	protected void encode(ChannelHandlerContext ctx, Object msg, ByteBuf out) throws Exception {
-		int opcode = classToOpcodeValue(msg.getClass());
-		SerializeData[] data = fieldValues(msg);
-		out.writeShort((short) opcode);
-		for (SerializeData d : data) {
-			out.writeBytes(BaseSerializer.serialize(d.get(), d.type(), d.annotations()));
-		}
-	}
-
 	private static class SerializeData implements Comparable<SerializeData> {
 		private final Object msg;
 		private final Field field;
@@ -81,7 +81,7 @@ public class PacketSerializer extends MessageToByteEncoder {
 			try {
 				return field.get(msg);
 			} catch (IllegalAccessException e) {
-				logger.error("", e);
+				logger.error("OpenMaple cannot handle private packet fields that honor accessor modifiers.", e);
 			}
 			return null;
 		}
