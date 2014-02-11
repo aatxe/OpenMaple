@@ -10,6 +10,8 @@ import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 
 /**
+ * A de-serializer utility that handles the de-serialization of basic types.
+ *
  * @author Aaron Weiss
  * @version 1.0.0
  * @since 2/10/14

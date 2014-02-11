@@ -17,8 +17,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Aaron
- * @version 1.0
+ * A reflections-based {@code MessageToByteEncoder} that automatically serializes packets based on the {@code Opcode}
+ * constructor annotation and the {@code Serial} field annotation.
+ *
+ * @author Aaron Weiss
+ * @version 1.0.0
  * @since 2/10/14
  */
 public class PacketSerializer extends MessageToByteEncoder {

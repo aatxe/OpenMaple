@@ -12,8 +12,10 @@ import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
 
 /**
- * @author Aaron
- * @version 1.0
+ * A serializer utility that handles the serialization of basic types.
+ *
+ * @author Aaron Weiss
+ * @version 1.0.0
  * @since 2/10/14
  */
 public class BaseSerializer {

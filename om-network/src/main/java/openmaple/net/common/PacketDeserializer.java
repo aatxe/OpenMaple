@@ -13,6 +13,9 @@ import java.lang.reflect.Constructor;
 import java.util.List;
 
 /**
+ * A reflections-based {@code ReplayingDecoder} that automatically de-serializes packets based on the {@code Opcode}
+ * constructor annotation.
+ *
  * @author Aaron Weiss
  * @version 1.0.0
  * @since 2/10/14
