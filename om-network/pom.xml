@@ -26,6 +26,11 @@
             <version>4.0.15.Final</version>
         </dependency>
         <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>16.0</version>
+        </dependency>
+        <dependency>
             <groupId>OpenMaple</groupId>
             <artifactId>om-crypto</artifactId>
             <version>0.0.0-SNAPSHOT</version>
