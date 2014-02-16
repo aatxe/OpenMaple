@@ -20,13 +20,13 @@ import java.util.List;
  * @version 1.0.0
  * @since 2/10/14
  */
-public class PacketDeserializer extends ReplayingDecoder<ByteBuf> {
+public class AutomaticPacketDeserializer extends ReplayingDecoder<ByteBuf> {
 	private Constructor<?>[] constructors;
 
-	public PacketDeserializer() {
+	public AutomaticPacketDeserializer() {
 		constructors = new Constructor<?>[0xFFFF];
 		try {
-			ClassPath cp = ClassPath.from(PacketDeserializer.class.getClassLoader());
+			ClassPath cp = ClassPath.from(AutomaticPacketDeserializer.class.getClassLoader());
 			for (ClassPath.ClassInfo info : cp.getAllClasses()) {
 				Class<?> c = info.load();
 				if (Packet.class.isAssignableFrom(c)) {

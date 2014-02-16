@@ -24,8 +24,8 @@ import java.util.Map;
  * @version 1.0.0
  * @since 2/10/14
  */
-public class PacketSerializer extends MessageToByteEncoder {
-	private final static Logger logger = LoggerFactory.getLogger(PacketSerializer.class);
+public class AutomaticPacketSerializer extends MessageToByteEncoder {
+	private final static Logger logger = LoggerFactory.getLogger(AutomaticPacketSerializer.class);
 	private Map<Class<?>, Constructor<?>> classConstructorMap = new HashMap<>();
 
 	@Override
